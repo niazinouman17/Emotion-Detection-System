@@ -1,0 +1,384 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+header .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #3a5fd3;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li {
+    position: relative;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #1f5fff; /* Change color on hover */
+}
+
+header .get-started {
+    background-color: #316fff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+header .get-started:hover {
+    background-color: #1f5fff; /* Darker shade on hover */
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 5%;
+    background-color: #fff;
+    margin-top: 20px;
+}
+
+.hero .content {
+    max-width: 500px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    color: #1b2853;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    margin: 20px 0;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.hero .btn.primary {
+    background-color: #1f5fff;
+    color: #fff;
+    padding: 10px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1rem;
+    box-shadow: 0 5px 10px rgba(31, 95, 255, 0.2);
+}
+
+.hero .illustration {
+    position: relative;
+}
+
+.hero .main-image {
+    width: 400px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Placeholder illustration with emojis (replace with actual image or icons later) */
+.hero .illustration::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(31, 95, 255, 0.1);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.hero .illustration::after {
+    content: "";
+    position: absolute;
+    right: -50px;
+    top: 30px;
+    width: 120px;
+    height: 120px;
+    background-color: rgba(255, 106, 61, 0.1);/* Get Started Section */
+    .get-started {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 50px 5%;
+        background-color: #e9ecef; /* Light gray background */
+        min-height: 100vh; /* Full viewport height */
+    }
+    
+    .get-started h1 {
+        font-size: 2.5rem;
+        color: #2c3e50; /* Darker text color */
+        margin-bottom: 20px;
+    }
+    
+    .get-started p {
+        font-size: 1.1rem;
+        color: #34495e; /* Darker text color */
+        margin-bottom: 30px;
+    }
+    
+    .upload-container {
+        display: flex;
+        gap: 30px; /* Space between upload options */
+        margin-bottom: 20px;
+        flex-wrap: wrap; /* Allows wrap on smaller screens */
+    }
+    
+    .upload-option {
+        background-color: #ffffff; /* White background for upload options */
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+        width: 250px; /* Fixed width for upload options */
+    }
+    
+    .upload-option h2 {
+        font-size: 1.5rem;
+        color: #2c3e50; /* Darker text color */
+        margin-bottom: 10px;
+    }
+    
+    .upload-option input,
+    .upload-option textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #bdc3c7; /* Light border color */
+        border-radius: 5px;
+        font-size: 1rem;
+    }
+    
+    .upload-option textarea {
+        resize: none; /* Disable resizing */
+    }
+    
+    .upload-option input[type="file"] {
+        border: none; /* Remove border */
+    }
+    
+    .upload-option input[type="file"]::-webkit-file-upload-button {
+        background-color: #1f5fff; /* Button color */
+        color: #ffffff; /* Button text color */
+        border: none;
+        border-radius: 5px;
+        padding: 10px 15px;
+        cursor: pointer;
+    }
+    
+    .upload-option input[type="file"]::-webkit-file-upload-button:hover {
+        background-color: #155ea8; /* Darker button color on hover */
+    }
+    
+    .btn.primary {
+        background-color: #1f5fff; /* Primary button color */
+        color: #ffffff; /* Button text color */
+        padding: 10px 30px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    
+    .btn.primary:hover {
+        background-color: #155ea8; /* Darker button color on hover */
+    }
+    
+    border-radius: 50%;
+    z-index: -1;
+}
+/* Contact Section */
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 5%;
+    background-color: #1d221e9f; /* Light background color */
+    height: 100vh; /* Full viewport height */
+}
+
+.contact h1 {
+    font-size: 2.5rem;
+    color: #2c3e50; /* Darker text color */
+    margin-bottom: 20px;
+}
+
+.contact p {
+    font-size: 1.1rem;
+    color: #34495e; /* Darker text color */
+    margin-bottom: 30px;
+}
+
+.contact-container {
+    background-color: #ffffff; /* White background for the form container */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+    width: 100%;
+    max-width: 600px; /* Max width for form container */
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form div {
+    margin-bottom: 15px;
+}
+
+.contact-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #2c3e50; /* Darker text color */
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border: 1px solid #bdc3c7; /* Light border color */
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    align-self: flex-start;
+    background-color: #1f5fff; /* Primary button color */
+    color: #ffffff; /* Button text color */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #155ea8; /* Darker button color on hover */
+}
+/* Footer Styling */
+footer {
+    background-color: #0D1B38; /* Dark blue background */
+    color: #ffffff;
+    padding: 40px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-column {
+    width: 22%;
+}
+
+.footer-column h4 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+    color: #f39c12; /* Orange hover effect */
+}
+
+.footer-column.newsletter form {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-column.newsletter input[type="email"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footer-column.newsletter button {
+    padding: 10px;
+    background-color: #f39c12; /* Orange button */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.footer-column.newsletter button:hover {
+    background-color: #d87a0f; /* Darker orange on hover */
+}
+
+.footer-column .social-icons a {
+    margin-right: 10px;
+}
+
+.footer-column .social-icons img {
+    width: 25px;
+    height: 25px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #ffffff33;
+    margin-top: 40px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+
+
+
