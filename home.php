@@ -50,20 +50,21 @@ if (!isset($_SESSION['user'])) {
     <footer>
         <div class="footer-container">
             <div class="footer-column">
-                <h4>Programs</h4>
+                <h4>Emotions</h4>
                 <ul>
-                    <li><a href="#">Corporate</a></li>
-                    <li><a href="#">One to One</a></li>
-                    <li><a href="#">Consulting</a></li>
+                    <li><a href="#">Happy</a></li>
+                    <li><a href="#">Sad</a></li>
+                    <li><a href="#">Angry</a></li>
+                    <li><a href="#">Neutral</a></li>
                 </ul>
             </div>
 
             <div class="footer-column">
-                <h4>Service</h4>
+                <h4>Application</h4>
                 <ul>
-                    <li><a href="#">Training</a></li>
-                    <li><a href="#">Coaching</a></li>
-                    <li><a href="#">Consulting</a></li>
+                    <li><a href="#">Medical</a></li>
+                    <li><a href="#">Law Enforcement </a></li>
+                    <li><a href="#">Mental Health</a></li>
                 </ul>
             </div>
 
