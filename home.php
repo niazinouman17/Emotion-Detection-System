@@ -55,7 +55,7 @@ if (!isset($_SESSION['user'])) {
                     <li><a href="Happy.html">Happy</a></li>
                     <li><a href="sadness.html">Sad</a></li>
                     <li><a href="Angry.html">Angry</a></li>
-                    <li><a href="#">Neutral</a></li>
+                    
                 </ul>
             </div>
 
