@@ -30,7 +30,7 @@ if (!isset($_SESSION['user'])) {
                
             </ul>
         </nav>
-        <a href="#" class="btn get-started">Get Started</a>
+        <a href="Main.php" class="btn get-started">Get Started</a>
     </header>
 
     <!-- Main Content Section -->
@@ -38,7 +38,7 @@ if (!isset($_SESSION['user'])) {
         <div class="content">
             <h1>EmoDLive - Emotion Recognition Entertainer using Deep Learning</h1>
             <p>At EmoDLive, our mission is to revolutionize the entertainment industry by creating a personalized, emotion-based experience for our users.</p>
-            <a href="#" class="btn primary">Get Started →</a>
+            <a href="Main.html" class="btn primary">Get Started →</a>
         </div>
         <div class="illustration">
             <!-- Placeholder Image (Replace with your actual image) -->
@@ -52,9 +52,9 @@ if (!isset($_SESSION['user'])) {
             <div class="footer-column">
                 <h4>Emotions</h4>
                 <ul>
-                    <li><a href="#">Happy</a></li>
-                    <li><a href="#">Sad</a></li>
-                    <li><a href="#">Angry</a></li>
+                    <li><a href="Happy.html">Happy</a></li>
+                    <li><a href="sadness.html">Sad</a></li>
+                    <li><a href="Angry.html">Angry</a></li>
                     <li><a href="#">Neutral</a></li>
                 </ul>
             </div>
@@ -62,7 +62,7 @@ if (!isset($_SESSION['user'])) {
             <div class="footer-column">
                 <h4>Application</h4>
                 <ul>
-                    <li><a href="#">Medical</a></li>
+                    <li><a href="#">Medical Uses</a></li>
                     <li><a href="#">Law Enforcement </a></li>
                     <li><a href="#">Mental Health</a></li>
                 </ul>
