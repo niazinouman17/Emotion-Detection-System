@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Analysis - EmoDLive</title>
+    <link rel="stylesheet" href="/css/voice.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <div class="logo">EmoDLive</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="btn get-started">Get Started</a>
+    </header>
+
+    <!-- Voice Analysis Section -->
+    <section class="voice-section">
+        <div class="container">
+            <h2>Voice Emotion Analysis</h2>
+            
+            <!-- Upload Section -->
+            <div class="voice-card">
+                <div class="upload-header">
+                    <i class="upload-icon">🎤</i>
+                    <h3>Upload Voice Sample</h3>
+                </div>
+                <div class="upload-body">
+                    <input type="file" id="voiceUpload" accept=".wav,.mp3" hidden>
+                    <label for="voiceUpload" class="upload-btn">
+                        Choose File
+                    </label>
+                    <span class="file-info">No file selected</span>
+                    <div class="waveform-preview"></div>
+                </div>
+            </div>
+
+            <!-- Recording Section -->
+            <div class="voice-card">
+                <div class="record-header">
+                    <i class="record-icon">⏺</i>
+                    <h3>Record Live Audio</h3>
+                </div>
+                <div class="record-body">
+                    <div class="recording-controls">
+                        <button class="record-btn" id="startRecord">
+                            Start Recording
+                        </button>
+                        <button class="stop-btn" id="stopRecord" disabled>
+                            Stop Recording
+                        </button>
+                    </div>
+                    <div class="recording-status">
+                        <span class="timer">00:00</span>
+                        <div class="visualizer"></div>
+                    </div>
+                    <audio id="audioPlayback" controls></audio>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <!-- Same footer as previous pages -->
+    </footer>
+
+    <script>
+        // Voice Recording Logic
+        let mediaRecorder;
+        let audioChunks = [];
+        let timerInterval;
+        let seconds = 0;
+
+        document.getElementById('startRecord').addEventListener('click', async () => {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                mediaRecorder = new MediaRecorder(stream);
+                
+                mediaRecorder.ondataavailable = event => {
+                    audioChunks.push(event.data);
+                };
+
+                mediaRecorder.onstop = () => {
+                    const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+                    const audioUrl = URL.createObjectURL(audioBlob);
+                    const audio = document.getElementById('audioPlayback');
+                    audio.src = audioUrl;
+                    clearInterval(timerInterval);
+                    seconds = 0;
+                };
+
+                mediaRecorder.start();
+                document.getElementById('stopRecord').disabled = false;
+                document.getElementById('startRecord').disabled = true;
+                
+                // Start timer
+                timerInterval = setInterval(() => {
+                    seconds++;
+                    document.querySelector('.timer').textContent = 
+                        `${String(Math.floor(seconds / 60)).padStart(2, '0')}:${String(seconds % 60).padStart(2, '0')}`;
+                }, 1000);
+            } catch (err) {
+                console.error('Error accessing microphone:', err);
+            }
+        });
+
+        document.getElementById('stopRecord').addEventListener('click', () => {
+            mediaRecorder.stop();
+            document.getElementById('stopRecord').disabled = true;
+            document.getElementById('startRecord').disabled = false;
+        });
+
+        // File Upload Handling
+        document.getElementById('voiceUpload').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                document.querySelector('.file-info').textContent = 
+                    `${file.name} (${(file.size / 1024 / 1024).toFixed(2)} MB)`;
+            }
+        });
+    </script>
+</body>
+</html>
